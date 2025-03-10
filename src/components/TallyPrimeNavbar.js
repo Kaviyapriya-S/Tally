@@ -36,16 +36,20 @@ const TallyPrimeNavbar = () => {
     padding: '0 16px' // Increased padding for alignment
   });
 
-  const MenuButton = styled(Box)(({ active }) => ({
+  const MenuButton = styled(Box)(({ theme }) => ({
     color: 'white',
     fontSize: '0.75rem',
-    padding: '0 12px', // Slightly increased padding
+    padding: '0 12px',
     height: '24px',
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: active ? '#3A6BC5' : 'transparent',
-    cursor: 'pointer'
+    backgroundColor: 'transparent',
+    cursor: 'pointer',
+    '&[data-active="true"]': {
+      backgroundColor: '#3A6BC5',
+    }
   }));
+  
 
   return (
     <Box sx={{ fontFamily: 'Arial, sans-serif' }}>
@@ -70,13 +74,16 @@ const TallyPrimeNavbar = () => {
       {/* Menu Bar */}
       <MenuBar>
         {topMenuItems.map((item) => (
-          <MenuButton 
-            key={item.id}
-            active={selectedMenuItem === item.id}
-            onClick={() => setSelectedMenuItem(item.id)}
-          >
-            {item.label}
-          </MenuButton>
+         <MenuButton 
+         key={item.id}
+         data-active={selectedMenuItem === item.id}
+         onClick={() => setSelectedMenuItem(item.id)}
+       >
+         {item.label}
+       </MenuButton>
+       
+       
+       
         ))}
       </MenuBar>
     </Box>
