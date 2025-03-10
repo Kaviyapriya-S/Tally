@@ -1,10 +1,15 @@
 'use client';
 
 import React from 'react';
-import { Box } from '@mui/material';
+import { Box ,Button} from '@mui/material';
 import MenuOption from '../components/menuoption';
+import { useRouter } from 'next/navigation';
 
 const GatewayMenu = () => {
+  const router = useRouter();
+  const handleCreateClick = () => {
+    router.push('/voucher');
+   };
   return (
     <Box sx={{
       width: '280px',
@@ -28,13 +33,13 @@ const GatewayMenu = () => {
      
       {/* MASTERS Section */}
       <MenuOption text="MASTERS" isSectionHeader={true} />
-      <MenuOption text="Create" isHighlighted={true} />
+      <MenuOption text="Create" isHighlighted={true} onClick={ handleCreateClick } />
       <MenuOption text="Alter" />
       <MenuOption text="Chart of Accounts" />
      
       {/* TRANSACTIONS Section */}
       <MenuOption text="TRANSACTIONS" isSectionHeader={true} />
-      <MenuOption text="Vouchers" />
+      <Button  isHighlighted={true} onClick={ handleCreateClick }>Voucher </Button> 
       <MenuOption text="Day Book" />
      
       {/* UTILITIES Section */}
