@@ -80,16 +80,7 @@ const CompanyInfoPanel = () => {
         padding: '8px 16px 16px',
         backgroundColor: 'white'
       }}>
-        <Box sx={{ flex: 1 }}>
-          <Typography sx={{ fontSize: '14px' }}>
-            lhub
-          </Typography>
-        </Box>
-        <Box sx={{ flex: 1 }}>
-          <Typography sx={{ fontSize: '14px' }}>
-            1-Apr-24
-          </Typography>
-        </Box>
+    
       </Box>
     </Box>
   );
